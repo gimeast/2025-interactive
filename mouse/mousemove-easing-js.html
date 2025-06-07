@@ -13,13 +13,16 @@
                 font-size: 30px;
                 padding: 20px;
             }
+            .box-container {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1000;
+            }
             .box {
+                position: fixed;
                 width: 100px;
                 height: 100px;
-
-                position: absolute;
-                top: 50%;
-                left: 50%;
 
                 /*박스의 중심이 왼쪽위(default)가 아닌 가운데로 이동하도록함*/
                 transform: translate(-50%, -50%);
@@ -31,13 +34,15 @@
     </head>
     <body>
         <h1>테스트</h1>
-        <div class="box">
-            <img src="./images/butterfly.gif" alt="" aria-hidden="true" />
+        <div class="box-container">
+            <div class="box">
+                <img src="./images/butterfly.gif" alt="" aria-hidden="true" />
+            </div>
         </div>
 
         <script>
             const h1 = document.querySelector("h1");
-            const box = document.querySelector(".box");
+            const boxContainer = document.querySelector(".box-container");
 
             // 마우스 현재 좌표
             let pageX = 0;
@@ -58,8 +63,7 @@
             const loop = () => {
                 targetX += (pageX - targetX) * speed;
                 targetY += (pageY - targetY) * speed;
-                box.style.left = `${targetX}px`;
-                box.style.top = `${targetY}px`;
+                boxContainer.style.transform = `translate(${targetX}px, ${targetY}px)`;
                 window.requestAnimationFrame(loop);
             };
             loop();
