@@ -1,0 +1,22 @@
+{
+  "name": "2025-interactive",
+  "version": "1.0.0",
+  "description": "실무에서 자주 사용하는 인터랙티브 개발 스킬 정리",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gimeast/2025-interactive.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gimeast/2025-interactive/issues"
+  },
+  "homepage": "https://github.com/gimeast/2025-interactive#readme",
+  "dependencies": {
+    "prettier": "^3.5.3"
+  }
+}
