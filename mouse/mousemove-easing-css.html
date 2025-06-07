@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>마우스 이동시 따라오는 이미지에 이징효과 주기 CSS 버전</title>
+        <style>
+            body {
+                background-color: lightgreen;
+                height: 300vh;
+            }
+            h1 {
+                font-size: 30px;
+                padding: 20px;
+            }
+            .box {
+                width: 100px;
+                height: 100px;
+
+                position: absolute;
+                top: 50%;
+                left: 50%;
+
+                /*박스의 중심이 왼쪽위(default)가 아닌 가운데로 이동하도록함*/
+                transform: translate(-50%, -50%);
+
+                /*이징효과 주기*/
+                transition: all 1000ms ease-out;
+            }
+            .box img {
+                width: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>테스트</h1>
+        <div class="box">
+            <img src="./images/butterfly.gif" alt="" aria-hidden="true" />
+        </div>
+
+        <script>
+            const h1 = document.querySelector("h1");
+            const box = document.querySelector(".box");
+
+            window.addEventListener("mousemove", (e) => {
+                h1.innerText = `pageX = ${e.pageX}, pageY = ${e.pageY}`;
+
+                box.style.left = `${e.pageX}px`;
+                box.style.top = `${e.pageY}px`;
+            });
+        </script>
+    </body>
+</html>
