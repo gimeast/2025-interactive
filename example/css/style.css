@@ -1,7 +1,8 @@
 body {
     width: 100%;
     height: 100vh;
-    background: url("../images/bg-pc.jpg") center center / cover no-repeat;
+    background: url("../images/mouse-img-easing-effects/bg-pc.jpg") center
+        center / cover no-repeat;
     padding: 0;
     margin: 0;
     overflow: hidden;
